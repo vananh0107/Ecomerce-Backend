@@ -62,7 +62,7 @@ router.put('/reset-password/:token', resetPassword);
 router.delete('/empty-cart', authMiddleware, emptyCart);
 
 router.delete(
-  '/delete-product-cart/:id/:color',
+  '/delete-product-cart/:id',
   authMiddleware,
   removeProductFromCart
 );
