@@ -52,10 +52,6 @@ var orderSchema = new mongoose.Schema(
           ref: 'Product',
           required: true,
         },
-        color: {
-          type: String,
-          required: true,
-        },
         count: {
           type: Number,
           required: true,
