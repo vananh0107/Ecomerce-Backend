@@ -377,13 +377,14 @@ const getUserCart = asyncHandler(async (req, res) => {
 });
 const removeProductFromCart = asyncHandler(async (req, res) => {
   const { _id } = req.user;
-  const { id, color } = req.params;
+  const { id } = req.params;
   validateMongoDbId(_id);
   try {
     const cartItem = await Cart.findOne({
       orderby: _id,
-      products: { $elemMatch: { product: id, color: '#' + color } },
+      products: { $elemMatch: { product: id } },
     });
+    console.log(cartItem)
     let i = -1;
     let cartTotal = 0;
     let listProduct = cartItem.products;
